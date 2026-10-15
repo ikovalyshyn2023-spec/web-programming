@@ -1,0 +1,484 @@
+/* =====================================================
+   Лабораторна 2 — Акустична варта
+   Зовнішній CSS. Селектори, Box Model, Display,
+   Cascade / Specificity, Transition, Position, Transform
+   ===================================================== */
+
+/* ---------- УНІВЕРСАЛЬНИЙ СЕЛЕКТОР (*) ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* обов'язково для Box Model */
+}
+
+/* ---------- СЕЛЕКТОР ЕЛЕМЕНТА + ГРУПУВАННЯ ---------- */
+html, body {
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    color: #1a202c;
+    background-color: #f7fafc;
+}
+
+/* ---------- CONTAINER ---------- */
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* ---------- HEADER ---------- */
+header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 12px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    font-size: 28px;
+    color: #38a169;
+    font-weight: bold;
+}
+
+.logo h1 {
+    font-size: 1.4rem;
+    color: #1a365d;
+    font-weight: 700;
+}
+
+.tagline {
+    font-size: 0.85rem;
+    color: #718096;
+}
+
+/* ---------- NAV ---------- */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/* Селектор класу + псевдоклас */
+.nav-link {
+    display: inline-block;          /* display: inline-block */
+    padding: 8px 14px;
+    text-decoration: none;
+    color: #4a5568;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: color 0.25s ease, background-color 0.25s ease;
+}
+
+.nav-link:hover {
+    color: #38a169;
+    background-color: #f0fff4;
+}
+
+.nav-link.active {
+    color: #38a169;
+    border-bottom: 2px solid #38a169;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+    background-color: #f0fff4;
+    padding-bottom: 40px;
+}
+
+.hero-banner {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.banner-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 340px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-content {
+    padding-top: 28px;
+    text-align: center;
+}
+
+.hero-text h2 {
+    font-size: 2.2rem;
+    color: #1a365d;
+    line-height: 1.25;
+    margin-bottom: 16px;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    color: #4a5568;
+    margin-bottom: 24px;
+}
+
+/* Декоративний елемент з transform (демонстрація вимоги) */
+.hero-text::after {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: #38a169;
+    border-radius: 50%;
+    margin-left: 8px;
+    transform: scale(1.2) rotate(15deg);
+    vertical-align: middle;
+}
+
+/* ---------- BUTTONS ---------- */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #38a169;
+    color: #ffffff;
+}
+
+/* Hover з transition (вимога) */
+.btn-primary:hover {
+    background-color: #2f855a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(56, 161, 105, 0.4);
+}
+
+/* ---------- SECTION TITLES ---------- */
+.section-title {
+    font-size: 1.6rem;
+    color: #1a365d;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+/* ---------- MONITORING CARDS (inline-block) ---------- */
+.monitoring {
+    padding: 40px 0;
+    background-color: #ffffff;
+}
+
+.cards-row {
+    text-align: center; /* щоб inline-block центрувалися */
+}
+
+.info-card {
+    display: inline-block;          /* обов'язково inline-block */
+    width: 180px;
+    vertical-align: top;
+    background-color: #f7fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 18px 14px;             /* Box Model: padding */
+    margin: 8px;                    /* Box Model: margin */
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.card-label {
+    display: block;
+    font-size: 0.8rem;
+    color: #718096;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.info-card strong {
+    display: block;
+    font-size: 1.15rem;
+    color: #2d3748;
+    margin-bottom: 4px;
+}
+
+.card-sub {
+    font-size: 0.85rem;
+    color: #a0aec0;
+}
+
+/* ---------- SERVICES (article cards) ---------- */
+.services {
+    padding: 40px 0;
+    background-color: #edf2f7;
+}
+
+.services-grid {
+    text-align: center;
+}
+
+.service-card {
+    display: inline-block;          /* inline-block */
+    width: 240px;
+    vertical-align: top;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 22px 18px;
+    margin: 10px;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+    box-sizing: border-box;
+    transition: box-shadow 0.3s ease, transform 0.25s ease;
+}
+
+.service-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
+}
+
+.service-card h3 {
+    font-size: 1.1rem;
+    color: #2b6cb0;
+    margin-bottom: 8px;
+}
+
+.service-card p {
+    font-size: 0.95rem;
+    color: #4a5568;
+}
+
+/* ---------- WARNING (aside + position) ---------- */
+.warning {
+    padding: 10px 0;
+}
+
+/* ID-селектор має вищу specificity */
+#warning-block .warning-box {
+    background-color: #fff5f5;
+    border: 1px solid #fc8181;
+    border-left: 5px solid #e53e3e;
+    border-radius: 8px;
+    padding: 16px 20px;
+    position: relative;             /* position: relative */
+    margin: 10px 0;
+}
+
+/* Навмисний конфлікт для cascade/specificity демонстрації */
+.warning-box {
+    background-color: #fefcbf;      /* буде перекрито ID-селектором вище */
+}
+
+.warning-badge {
+    position: absolute;             /* position: absolute */
+    top: -10px;
+    left: -10px;
+    width: 28px;
+    height: 28px;
+    background-color: #e53e3e;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.level-high {
+    color: #c53030;
+    font-weight: 700;
+}
+
+.level-normal {
+    color: #38a169;
+}
+
+/* ---------- TABLE ---------- */
+.measurements {
+    padding: 40px 0;
+    background-color: #ffffff;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.data-table th,
+.data-table td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.data-table th {
+    background-color: #edf2f7;
+    color: #2d3748;
+    font-weight: 600;
+}
+
+.data-table tr:hover {
+    background-color: #f7fafc;
+}
+
+/* ---------- BADGES ---------- */
+.badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.badge-normal {
+    background-color: #c6f6d5;
+    color: #276749;
+}
+
+.badge-alert {
+    background-color: #fed7d7;
+    color: #c53030;
+}
+
+/* ---------- FORM ---------- */
+.order {
+    padding: 40px 0 50px;
+    background-color: #f7fafc;
+}
+
+.order-desc {
+    text-align: center;
+    color: #718096;
+    margin-bottom: 28px;
+}
+
+.order-form {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 28px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Селектор атрибута */
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    font-size: 1rem;
+    margin-top: 6px;
+    transition: border-color 0.25s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #38a169;
+    box-shadow: 0 0 0 3px rgba(56, 161, 105, 0.2);
+}
+
+label {
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 0.95rem;
+}
+
+.required {
+    color: #e53e3e;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+    background-color: #1a365d;
+    color: #a0aec0;
+    padding: 30px 0;
+}
+
+.footer-inner {
+    text-align: center;
+}
+
+.footer-brand strong {
+    color: #ffffff;
+    font-size: 1.15rem;
+}
+
+.footer-nav {
+    margin: 14px 0;
+}
+
+.footer-nav a {
+    color: #90cdf4;
+    text-decoration: none;
+    margin: 0 12px;
+    font-size: 0.95rem;
+    transition: color 0.25s ease;
+}
+
+.footer-nav a:hover {
+    color: #ffffff;
+}
+
+.copyright {
+    font-size: 0.85rem;
+    margin-top: 10px;
+}
+
+/* ---------- ДОДАТКОВІ СЕЛЕКТОРИ ДЛЯ ДЕМОНСТРАЦІЇ ---------- */
+
+/* Групування селекторів */
+h2, h3 {
+    font-weight: 700;
+}
+
+/* Селектор ID (висока specificity) */
+#home {
+    /* використовується для якірного посилання */
+}
+
+/* Приклад навмисного конфлікту (для пояснення на захисті):
+   .warning-box { background: yellow; }  — нижча specificity
+   #warning-block .warning-box { background: #fff5f5; } — вища, перемагає
+*/

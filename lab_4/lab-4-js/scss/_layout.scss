@@ -1,0 +1,162 @@
+// =====================================================
+// _layout.scss — header, hero, sections, footer
+// =====================================================
+
+@use "variables" as v;
+@use "mixins" as m;
+
+.container {
+  @include m.container;
+}
+
+/* ----- HEADER (Flexbox) ----- */
+.header {
+  background-color: v.$color-white;
+  border-bottom: 1px solid v.$color-border;
+  padding: v.$space-md 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header__inner {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-md;
+
+  @include m.respond-to(v.$bp-tablet) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: v.$space-sm;
+
+  h1 {
+    font-size: 1.25rem;
+    color: v.$color-text;
+    margin: 0;
+  }
+
+  .tagline {
+    font-size: 0.85rem;
+    color: v.$color-muted;
+  }
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-sm;
+
+  @include m.respond-to(v.$bp-tablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: v.$space-md;
+  }
+
+  a {
+    color: v.$color-muted;
+    font-weight: 600;
+    padding: v.$space-xs v.$space-sm;
+
+    &:hover,
+    &.active {
+      color: v.$color-primary;
+    }
+  }
+}
+
+/* ----- HERO (Grid) ----- */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: v.$space-lg;
+  padding: v.$space-xl 0;
+  align-items: center;
+
+  @include m.respond-to(v.$bp-tablet) {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}
+
+.hero__text {
+  h2 {
+    font-size: clamp(1.6rem, 5vw, 2.4rem);
+    color: v.$color-text;
+    margin-bottom: v.$space-md;
+  }
+
+  p {
+    color: v.$color-muted;
+    margin-bottom: v.$space-lg;
+  }
+}
+
+.hero__image img {
+  width: 100%;
+  border-radius: v.$radius;
+  object-fit: cover;
+}
+
+/* ----- SECTIONS ----- */
+.section {
+  padding: v.$space-xl 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 1.5rem;
+  color: v.$color-text;
+  margin-bottom: v.$space-lg;
+}
+
+/* ----- FOOTER (Flexbox) ----- */
+.footer {
+  background-color: v.$color-footer;
+  color: #a0aec0;
+  padding: v.$space-xl 0;
+  margin-top: v.$space-xl;
+}
+
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-lg;
+  text-align: center;
+
+  @include m.respond-to(v.$bp-tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+}
+
+.footer__nav {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-sm;
+
+  @include m.respond-to(v.$bp-tablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: v.$space-md;
+  }
+
+  a {
+    color: #90cdf4;
+
+    &:hover {
+      color: v.$color-white;
+    }
+  }
+}
+
+.footer__brand strong {
+  color: v.$color-white;
+}

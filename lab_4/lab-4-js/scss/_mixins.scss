@@ -1,0 +1,25 @@
+// =====================================================
+// _mixins.scss
+// =====================================================
+
+@use "variables" as v;
+
+// Media query mixin (Mobile First)
+@mixin respond-to($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+// Flex center
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Container
+@mixin container {
+  width: min(100% - 32px, v.$container-max);
+  margin-inline: auto;
+}
