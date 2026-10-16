@@ -5,7 +5,7 @@
  * ЗАМІНИ API_URL на свій endpoint після створення проєкту на mockapi.io
  * Приклад: https://68xxxxxx.mockapi.io/api/v1/sensors
  */
-const API_URL = "https://YOUR_PROJECT.mockapi.io/api/v1/sensors";
+const API_URL = "https://6ad1dd0466cd28aed82d00b8.mockapi.io/sensors";
 
 async function loadSensors() {
   const container = document.querySelector("#sensors-list");
