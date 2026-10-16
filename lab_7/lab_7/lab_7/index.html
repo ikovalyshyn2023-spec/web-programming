@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Акустична варта — Лабораторна 7</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <div class="logo">
+        <strong>Акустична варта</strong>
+        <span>Тиша сьогодні — комфорт завтра</span>
+      </div>
+      <nav class="nav">
+        <a href="#sensors">Сенсори</a>
+        <a href="#about">Про проєкт</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Моніторинг шуму з даних API</h1>
+      <p>Дані сенсорів завантажуються з публічного REST API (MockAPI) через <code>fetch()</code>.</p>
+    </section>
+
+    <section class="sensors" id="sensors">
+      <h2>Активні сенсори</h2>
+      <p class="sensors__hint">Список будується динамічно після GET-запиту до API.</p>
+      <div id="sensors-list" class="sensors__list"></div>
+    </section>
+
+    <section class="about" id="about">
+      <h2>Ланцюжок роботи</h2>
+      <ol>
+        <li>MockAPI зберігає JSON-масив сенсорів</li>
+        <li><code>fetch(API_URL)</code> — HTTP GET</li>
+        <li><code>response.json()</code> — масив JavaScript</li>
+        <li><code>renderSensors(sensors)</code> — картки в DOM</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Лабораторна робота №7 · WEB-програмування · КНк-43</p>
+  </footer>
+
+  <script src="./js/app.js"></script>
+</body>
+</html>
