@@ -30,5 +30,7 @@ npx tsc
 ## Результат
 ![screenshot](./screenshot.png)
 
+Сторінка: https://ikovalyshyn2023-spec.github.io/web-programming/lab_8/
+
 ## Висновок
 Закріплено роботу з TypeScript: типізація відповіді API, async/await, безпечна робота з DOM через generics (`querySelector<HTMLDivElement>`).
