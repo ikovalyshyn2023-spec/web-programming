@@ -1,0 +1,12 @@
+{
+  "name": "acoustic-watch-lab8",
+  "version": "1.0.0",
+  "description": "Lab 8: TypeScript + MockAPI sensors",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  }
+}
