@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # AcousticWatch
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.5.
@@ -57,3 +58,33 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+=======
+# WEB-програмування (КН43)
+
+Один репозиторій для всіх лабораторних робіт.
+
+## Структура
+
+```
+web-programming/
+├── index.html          ← головна сторінка з посиланнями
+├── lab_1/
+├── lab_2/
+├── lab_3/
+├── lab_4/
+├── lab_5/              ← класи JavaScript, Акустична варта
+│   ├── index.html
+│   ├── report.md
+│   ├── screenshot.png
+│   ├── css/
+│   └── js/
+└── README.md
+```
+
+## GitHub Pages
+
+Після увімкнення Pages (main / root):
+
+- Головна: `https://USERNAME.github.io/web-programming/`
+- Лаб 5: `https://USERNAME.github.io/web-programming/lab_5/`
+>>>>>>> 1578cec591c5cd93522d9c9b57097a3cfa6ff627

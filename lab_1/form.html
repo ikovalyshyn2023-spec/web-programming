@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запропонувати місто — Мої 3 найкращі міста світу</title>
+</head>
+<body>
+
+    <header>
+        <h1>Запропонувати місто для наступного рейтингу</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="city-kyiv.html">Київ</a></li>
+                <li><a href="city-paris.html">Париж</a></li>
+                <li><a href="city-tokyo.html">Токіо</a></li>
+                <li><a href="form.html">Запропонувати місто</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Форма пропозиції</h2>
+            <p>Заповніть форму, якщо хочете запропонувати нове місто для рейтингу.</p>
+
+            <form action="#" method="get">
+                <p>
+                    <label for="name">Ваше ім’я:</label><br>
+                    <input type="text" id="name" name="name" required>
+                </p>
+
+                <p>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required>
+                </p>
+
+                <p>
+                    <label for="city">Назва міста:</label><br>
+                    <input type="text" id="city" name="city" required>
+                </p>
+
+                <p>
+                    <label for="country">Країна:</label><br>
+                    <input type="text" id="country" name="country" required>
+                </p>
+
+                <p>
+                    <label for="type">Тип пропозиції:</label><br>
+                    <select id="type" name="type" required>
+                        <option value="">— оберіть —</option>
+                        <option value="visit">Хочу відвідати</option>
+                        <option value="lived">Жив/жила там</option>
+                        <option value="recommend">Рекомендую друзям</option>
+                        <option value="other">Інше</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="reason">Чому варто відвідати це місто?</label><br>
+                    <textarea id="reason" name="reason" rows="5" cols="40" required></textarea>
+                </p>
+
+                <p>
+                    <button type="submit">Надіслати пропозицію</button>
+                </p>
+            </form>
+        </section>
+
+        <p><a href="index.html">← Повернутися на головну</a></p>
+    </main>
+
+    <footer>
+        <p>Автор блогу: Студент WEB-програмування</p>
+        <p>Лабораторна робота 1 · 2026</p>
+    </footer>
+
+</body>
+</html>

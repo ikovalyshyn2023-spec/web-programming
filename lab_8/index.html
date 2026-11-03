@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Акустична варта — Лабораторна 8 (TypeScript)</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <div class="logo">
+        <strong>Акустична варта</strong>
+        <span>Тиша сьогодні — комфорт завтра</span>
+      </div>
+      <nav class="nav">
+        <a href="#sensors-section">Сенсори</a>
+        <a href="#about">Про проєкт</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Моніторинг шуму з API (TypeScript)</h1>
+      <p>
+        Дані сенсорів завантажуються з MockAPI через
+        <code>fetch()</code> і типізуються інтерфейсом <code>Sensor</code>.
+      </p>
+    </section>
+
+    <section class="sensors" id="sensors-section">
+      <h2>Активні сенсори</h2>
+      <p class="sensors__hint">
+        Список будується динамічно після GET-запиту. Код написаний на TypeScript
+        і скомпільований у <code>dist/sensors.js</code>.
+      </p>
+      <div id="sensors" class="sensors__list"></div>
+    </section>
+
+    <section class="about" id="about">
+      <h2>Ланцюжок роботи</h2>
+      <ol>
+        <li>MockAPI зберігає JSON-масив сенсорів</li>
+        <li><code>fetch(API_URL)</code> — HTTP GET</li>
+        <li><code>response.json()</code> → <code>Sensor[]</code></li>
+        <li><code>renderSensors(sensors)</code> — картки в DOM</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Лабораторна робота №8 · WEB-програмування · TypeScript + API · КНк-43</p>
+  </footer>
+
+  <script type="module" src="./dist/sensors.js"></script>
+</body>
+</html>

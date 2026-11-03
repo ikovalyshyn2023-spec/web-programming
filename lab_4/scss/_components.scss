@@ -1,0 +1,235 @@
+// =====================================================
+// _components.scss — cards, buttons, table, form, warning
+// =====================================================
+
+@use "variables" as v;
+@use "mixins" as m;
+
+/* ----- BUTTON ----- */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: v.$color-primary;
+  color: v.$color-white;
+  border: none;
+  border-radius: v.$radius;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+
+  &:hover {
+    background-color: v.$color-primary-dark;
+    transform: translateY(-2px);
+    color: v.$color-white;
+  }
+}
+
+/* ----- MONITORING GRID (1 → 2 → 5) ----- */
+.monitoring-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: v.$space-md;
+
+  @include m.respond-to(v.$bp-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include m.respond-to(v.$bp-desktop) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.info-card {
+  background-color: v.$color-white;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius;
+  padding: v.$space-md;
+  text-align: center;
+
+  .label {
+    display: block;
+    font-size: 0.8rem;
+    color: v.$color-muted;
+    text-transform: uppercase;
+    margin-bottom: v.$space-xs;
+  }
+
+  strong {
+    display: block;
+    font-size: 1.1rem;
+    color: v.$color-text;
+  }
+
+  .sub {
+    font-size: 0.85rem;
+    color: v.$color-muted;
+  }
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: v.$space-xs;
+
+  &--ok {
+    background-color: #c6f6d5;
+    color: v.$color-success;
+  }
+
+  &--alert {
+    background-color: #fed7d7;
+    color: v.$color-danger;
+  }
+}
+
+.level-ok { color: v.$color-success; }
+.level-high { color: v.$color-danger; font-weight: 700; }
+
+/* ----- SERVICES GRID (1 → 2 → 4) ----- */
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: v.$space-md;
+
+  @include m.respond-to(v.$bp-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include m.respond-to(v.$bp-desktop) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.service-card {
+  background-color: v.$color-white;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius;
+  padding: v.$space-lg;
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-sm;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+
+  &:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
+  }
+
+  h3 {
+    color: v.$color-primary;
+    font-size: 1.1rem;
+    margin: 0;
+  }
+
+  p {
+    color: v.$color-muted;
+    font-size: 0.95rem;
+    margin: 0;
+  }
+}
+
+/* ----- WARNING ----- */
+.warning {
+  background-color: v.$color-warning-bg;
+  border: 1px solid v.$color-danger;
+  border-left: 5px solid v.$color-danger;
+  border-radius: v.$radius;
+  padding: v.$space-md v.$space-lg;
+  margin: v.$space-lg 0;
+
+  strong {
+    color: v.$color-danger;
+  }
+}
+
+/* ----- TABLE ----- */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  background-color: v.$color-white;
+
+  th,
+  td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid v.$color-border;
+  }
+
+  th {
+    background-color: #edf2f7;
+    font-weight: 600;
+  }
+
+  tr:hover {
+    background-color: #f7fafc;
+  }
+}
+
+/* ----- FORM ----- */
+.order-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: v.$space-md;
+  background-color: v.$color-white;
+  padding: v.$space-lg;
+  border-radius: v.$radius;
+  border: 1px solid v.$color-border;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.form-fields {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: v.$space-md;
+
+  @include m.respond-to(v.$bp-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-xs;
+
+  label {
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .required {
+    color: v.$color-danger;
+  }
+}
+
+.form-group--full {
+  @include m.respond-to(v.$bp-tablet) {
+    grid-column: 1 / -1;
+  }
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 10px 12px;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius;
+
+  &:focus {
+    outline: none;
+    border-color: v.$color-primary;
+    box-shadow: 0 0 0 3px rgba(31, 138, 76, 0.2);
+  }
+}

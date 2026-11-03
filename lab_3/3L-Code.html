@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lab8 — CSS (варіант 1)</title>
+  <link rel="stylesheet" href="3L-Code.css" type="text/css" />
+  <style>
+    body { background-color: #f2f6fb; margin: 30px; }
+    body { background-image: url("background.jpg"); background-repeat: no-repeat;
+           background-position: left bottom; background-size: 200px 300px; background-attachment: scroll; }
+    p { padding: 12px; border-radius: 6px; margin-bottom: 14px; }
+    #p1 { text-align: right; color: #fff; background-color: #1a73e8; }
+    #p2 { text-align: center; line-height: 1.9; }
+    #p3 { text-align: left; word-spacing: 0.9em; color: #0b3d0b; background-color: #c6f7c6; }
+    #p4 { text-align: justify; text-decoration: line-through; font-style: italic; }
+    #p5 { color: #fff; background-color: #ff6f61; }
+    #p6 { font-family: Georgia, 'Times New Roman', serif; font-size: 18px; }
+    #p7 .firstword { font-variant: small-caps; font-weight: 600; }
+    .blueword { color: #0033cc; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <h1>Лабораторна робота №3 — CSS (приклад)</h1>
+  <p id="p1">Це перший абзац має багато слів, <span class="blueword">виділене</span> п'яте слово в ньому.</p>
+  <p id="p2">У цьому другому абзаці збільшений інтервал між рядками, щоб <span class="blueword">виділити</span> п'яте слово.</p>
+  <p id="p3">Третій абзац показує збільшений інтервал між словами, та п'яте слово <span class="blueword">синє</span> тут видно.</p>
+  <p id="p4">Це четвертий абзац перекреслений і курсивний, у ньому п'яте слово <span class="blueword">синє</span> також.</p>
+  <p id="p5">П'ятий абзац має контрастний фон і текст, та п'яте слово <span class="blueword">виділено</span> кольором.</p>
+  <p id="p6">Ось шостий абзац — він використовує інший шрифт та розмір, тут п'яте слово <span class="blueword">синє</span>.</p>
+  <p id="p7"><span class="firstword">Перше</span> слово цього сьомого абзацу — капітель, а п'яте слово <span class="blueword">синє</span> також.</p>
+<link rel="stylesheet" href="gallery.js" type="text/css" />
+</body>
+
+</html>
